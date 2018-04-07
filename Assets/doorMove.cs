@@ -27,13 +27,8 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
     {
         if (TargetState.IsInited)
         {
-<<<<<<< HEAD
             float step = 8 * Time.deltaTime;
-=======
-            float step = 2 * Time.deltaTime;
->>>>>>> c13e8ff4b306824761d4d593181847f343b843d9
             camera.transform.position = Vector3.MoveTowards(camera.transform.position, TargetState.Target, step);
-
         }
     }
 
@@ -41,10 +36,6 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
     {
         TargetState.Target = nextRoom.transform.position - new Vector3(0, 0, 1);
         TargetState.IsInited = true;
-<<<<<<< HEAD
-=======
-
->>>>>>> c13e8ff4b306824761d4d593181847f343b843d9
         var room = nextRoom.GetComponent<room>();
         room.EnterRoom();
     }
