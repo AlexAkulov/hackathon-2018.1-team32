@@ -92,8 +92,6 @@ public class Game : MonoBehaviour
 		
 			t.transform.position = new Vector3(x*Width + Left, y*Height + Top, 0);
 			Level[x,y].torch = t;
-
-			print(string.Format("create web on x: {0} y: {1}", x, y));
 		}
 	}
 	
