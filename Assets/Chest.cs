@@ -23,8 +23,9 @@ public class Chest : MonoBehaviour, IPointerClickHandler {
 			m_SpriteRenderer.color = new Color(m_SpriteRenderer.color.r, m_SpriteRenderer.color.g, m_SpriteRenderer.color.b, a);
 			if (a == 0)
 			{
-				Destroy(gameObject);		
-			}  
+				Destroy(gameObject);
+				t = 0.0f;
+			}
 		}		
 	}
 
