@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.Serialization.Formatters;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public static class TargetState
@@ -41,18 +42,40 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        
         if (IsLocked())
         {
             return;
         }
 
+        
+        var p = GetComponentInParent<room>();
+
+        if (p.name == "D3" && gameObject.name == "right_door")
+        {
+            var g = FindObjectOfType<Game>();
+            if (!g.IsHaveKey)
+            {
+                g.DialogOkShow("Эта дверь закрыта", "Ок");
+                return;
+            }
+
+            if (!g.D3OpenMessage)
+            {
+                g.DialogOkShow("Дверь удаётся открыть ключём", "Ок");
+                g.D3OpenMessage = true;
+                return;
+            }
+        }
+        
+        
         TargetState.Target = nextRoom.transform.position - new Vector3(0, 0, 1);
         TargetState.IsInited = true;
         var room = nextRoom.GetComponent<room>();
         var character = camera.GetComponentInChildren<character>();
         room.EnterRoom(character);
 
-        FindObjectOfType<Game>().DialogOkShow("Changed text", "button");
+//        FindObjectOfType<Game>().DialogOkShow("Changed text", "button");
 
     }
 }

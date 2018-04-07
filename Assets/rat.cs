@@ -34,7 +34,7 @@ public class rat : MonoBehaviour, IEnemy, IPointerClickHandler
         Health -= hero.Damage;
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); 
         }
 
         hero.Hit(Damage);

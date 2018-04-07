@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Chest : MonoBehaviour, IPointerClickHandler {
+public class GetKey : MonoBehaviour, IPointerClickHandler {
 
 	
 	SpriteRenderer m_SpriteRenderer;
 	private bool destroyed;
 	static float t = 0.0f;
-	
+
+	// Use this for initialization
 	void Start () {
-		m_SpriteRenderer = GetComponent<SpriteRenderer>();	
+		m_SpriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -25,13 +26,16 @@ public class Chest : MonoBehaviour, IPointerClickHandler {
 			{
 				Destroy(gameObject);
 				t = 0.0f;
+				FindObjectOfType<Game>().DialogOkShow("Вы находите странный ключ", "Взять");
 			}
 		}		
 	}
+	
 
+	
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		destroyed = true;
-		
+		FindObjectOfType<Game>().IsHaveKey = true;
 	}
 }

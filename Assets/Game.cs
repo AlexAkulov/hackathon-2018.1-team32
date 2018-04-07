@@ -7,6 +7,9 @@ using Random = UnityEngine.Random;
 public class Game : MonoBehaviour
 {
 
+	public bool IsHaveKey;
+	public bool D3OpenMessage;
+	
 	public GameObject Web;
 	public GameObject Chest;
 	public GameObject Torch;
