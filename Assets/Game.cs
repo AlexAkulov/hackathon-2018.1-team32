@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
 {
@@ -40,10 +37,12 @@ public class Game : MonoBehaviour
 
 	
 	// Use this for initialization
-	void Start () {
-		print("Start Game");
-		BuildLevel();
-		
+	void Start ()
+    {
+        Random.InitState(DateTime.Now.Millisecond);
+        var rooms = FindObjectsOfType<room>();
+        print("Start Game");
+		BuildLevel(rooms);
 	}
 	
 	// Update is called once per frame
@@ -55,8 +54,8 @@ public class Game : MonoBehaviour
 	{
 		for (var i = 0; i < NumberOfWeb; i++)
 		{
-			var x = UnityEngine.Random.RandomRange(0, NumberOfRooms);
-			var y = UnityEngine.Random.RandomRange(0, NumberOfRooms);
+			var x = Random.Range(0, NumberOfRooms);
+			var y = Random.Range(0, NumberOfRooms);
 			
 			var w = Instantiate(Web);
 		
@@ -69,8 +68,8 @@ public class Game : MonoBehaviour
 	{
 		for (var i = 0; i < NumberOfChests; i++)
 		{
-			var x = UnityEngine.Random.RandomRange(0, NumberOfRooms);
-			var y = UnityEngine.Random.RandomRange(0, NumberOfRooms);
+            var x = Random.Range(0, NumberOfRooms);
+			var y = Random.Range(0, NumberOfRooms);
 			
 			var c = Instantiate(Chest);
 		
@@ -83,8 +82,8 @@ public class Game : MonoBehaviour
 	{
 		for (var i = 0; i < NumberOfTorch; i++)
 		{
-			var x = UnityEngine.Random.RandomRange(0, NumberOfRooms);
-			var y = UnityEngine.Random.RandomRange(0, NumberOfRooms);
+			var x = Random.Range(0, NumberOfRooms);
+			var y = Random.Range(0, NumberOfRooms);
 			
 			var t = Instantiate(Torch);
 		
@@ -95,27 +94,28 @@ public class Game : MonoBehaviour
 		}
 	}
 	
-	private void generateEnemies()
+	private void generateEnemies(room[] rooms)
 	{
-		for (var i = 0; i < NumberOfEnemies; i++)
-		{
-			var x = UnityEngine.Random.RandomRange(0, NumberOfRooms);
-			var y = UnityEngine.Random.RandomRange(0, NumberOfRooms);
-			
-			var t = Instantiate(Rat);
-		
-			t.transform.position = new Vector3(x*Width + Left + 16, y*Height + Top - 11, 0);
-			Level[x,y].Enemy = t;
+	    var busy = new HashSet<int>();
+	    for (var i = 0; i < NumberOfEnemies; i++)
+	    {
+	        int roomIndex;
+		    do
+		    {
+		        roomIndex = Random.Range(0, NumberOfRooms * NumberOfRooms);
+		    } while (busy.Contains(roomIndex));
 
-			print(string.Format("create web on x: {0} y: {1}", x, y));
+            var t = Instantiate(Rat, new Vector3(16, -10, 0), Quaternion.identity);
+            t.transform.parent = rooms[roomIndex].transform;
+            t.transform.Translate(rooms[roomIndex].transform.position);
 		}
 	}
 	
-	private void BuildLevel()
+	private void BuildLevel(room[] rooms)
 	{
 		generateWeb();
 		generateChest();
 		generateTorch();
-		generateEnemies();
+		generateEnemies(rooms);
 	}
 }
