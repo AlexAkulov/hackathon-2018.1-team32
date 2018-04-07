@@ -12,8 +12,17 @@ public class room : MonoBehaviour
     {
         
     }
-     
-    public void EnterRoom () {
 
+    public bool HasEnemy()
+    {
+        return GetComponentInChildren<rat>() != null;
+    }
+     
+    public void EnterRoom ()
+    {
+        if (HasEnemy())
+        {
+            print("Oppps! There is enemy in this room.");
+        }
     }
 }
