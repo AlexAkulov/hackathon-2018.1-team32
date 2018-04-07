@@ -32,8 +32,19 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public bool IsLocked()
+    {
+        var currentRoom = GetComponentInParent<room>();
+        return currentRoom.HasEnemy();
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (IsLocked())
+        {
+            return;
+        }
+
         TargetState.Target = nextRoom.transform.position - new Vector3(0, 0, 1);
         TargetState.IsInited = true;
         var room = nextRoom.GetComponent<room>();
