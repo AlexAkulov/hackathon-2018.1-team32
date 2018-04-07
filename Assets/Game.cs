@@ -104,7 +104,10 @@ public class Game : MonoBehaviour
 		    do
 		    {
 		        roomIndex = Random.Range(0, NumberOfRooms * NumberOfRooms);
+			    
 		    } while (busy.Contains(roomIndex));
+
+		    busy.Add(roomIndex);
 
             var t = Instantiate(Rat, new Vector3(16, -10, 0), Quaternion.identity);
             t.transform.parent = rooms[roomIndex].transform;
