@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
@@ -10,6 +11,8 @@ public class Game : MonoBehaviour
 	public GameObject Chest;
 	public GameObject Torch;
 	public GameObject Rat;
+	public GameObject DialogOk;
+	public GameObject Camera;
 	
 	private const int NumberOfRooms = 5;
 	private const int NumberOfWeb = 10;
@@ -118,4 +121,19 @@ public class Game : MonoBehaviour
 		generateTorch();
 		generateEnemies(rooms);
 	}
+
+	public void DialogOkShow(string txt, string txtBtn)
+	{
+		DialogOk.GetComponentInChildren<Text>().text = txt;
+		DialogOk.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = txtBtn;
+		
+		
+		DialogOk.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y, 0);
+	}
+
+	public void DialogOkHide()
+	{
+		DialogOk.transform.position = new Vector3(-585, -755, 0);
+	}
+	
 }

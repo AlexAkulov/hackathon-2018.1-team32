@@ -17,6 +17,7 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
     public new GameObject camera;
     public GameObject nextRoom;
 
+
     // Use this for initialization
     public void Start ()
     {
@@ -38,5 +39,8 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
         TargetState.IsInited = true;
         var room = nextRoom.GetComponent<room>();
         room.EnterRoom();
+
+        FindObjectOfType<Game>().DialogOkShow("Changed text", "button");
+
     }
 }
