@@ -1,34 +1,42 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+public static class TargetState
+{
+    static TargetState()
+    {
+        IsInited = false;
+    }
+
+    public static bool IsInited { get; set; }
+    public static Vector3 Target { get; set; }
+}
+
 public class doorMove : MonoBehaviour, IPointerClickHandler
 {
-    public GameObject camera;
+    public new GameObject camera;
     public GameObject nextRoom;
 
-    public static int offsetX = 60;
-    public static int offsetY = 31;
-
     // Use this for initialization
-    void Start ()
+    public void Start ()
     {
     }
     
     // Update is called once per frame
-    void Update ()
+    public void Update ()
     {
-        
+        if (TargetState.IsInited)
+        {
+            float step = 8 * Time.deltaTime;
+            camera.transform.position = Vector3.MoveTowards(camera.transform.position, TargetState.Target, step);
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        print ("123");
-        var transformPosition = nextRoom.transform.position - new Vector3(0, 0, 1);
-        camera.transform.position = transformPosition;
-        //hero.transform.position = nextRoom.transform.position;
-
+        TargetState.Target = nextRoom.transform.position - new Vector3(0, 0, 1);
+        TargetState.IsInited = true;
         var room = nextRoom.GetComponent<room>();
         room.EnterRoom();
-
     }
 }
