@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4085986003739510, guid: eef44179105672e4dbb27f584b618e76, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 17.58
+      value: 23.54
       objectReference: {fileID: 0}
     - target: {fileID: 4085986003739510, guid: eef44179105672e4dbb27f584b618e76, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.09
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 4085986003739510, guid: eef44179105672e4dbb27f584b618e76, type: 2}
       propertyPath: m_LocalPosition.z
@@ -218,11 +218,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4582256589090176, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -12.7
       objectReference: {fileID: 0}
     - target: {fileID: 4582256589090176, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -5.09
       objectReference: {fileID: 0}
     - target: {fileID: 4582256589090176, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
       propertyPath: m_LocalPosition.z
@@ -254,15 +254,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4582256589090176, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4582256589090176, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4582256589090176, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
@@ -318,8 +318,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 50
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 12.069473
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
