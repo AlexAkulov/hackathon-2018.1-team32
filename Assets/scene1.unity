@@ -2402,6 +2402,10 @@ Prefab:
       propertyPath: m_Name
       value: A1
       objectReference: {fileID: 0}
+    - target: {fileID: 1433399908936056, guid: fff70b27b1ca4524c8b930f7308ee720, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fff70b27b1ca4524c8b930f7308ee720, type: 2}
   m_IsPrefabParent: 0
@@ -3360,6 +3364,42 @@ GameObject:
   m_PrefabParentObject: {fileID: 1433399908936056, guid: fff70b27b1ca4524c8b930f7308ee720,
     type: 2}
   m_PrefabInternal: {fileID: 513062601}
+--- !u!1839735485 &840706574
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 840706573}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray: []
+  m_TileSpriteArray: []
+  m_TileMatrixArray: []
+  m_TileColorArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0, y: 0, z: 1}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
 --- !u!1001 &853106011
 Prefab:
   m_ObjectHideFlags: 0
@@ -4725,7 +4765,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e326ac12a460bd14ab8ae92164f37f58,
+      objectReference: {fileID: 21300000, guid: a93bf2480de05b248ac4132434264d0d,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
@@ -6916,6 +6956,28 @@ Transform:
   m_Father: {fileID: 249867616}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1802640633 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1767821247236198, guid: fa0b85d211f857f40bb560e222b34ced,
+    type: 2}
+  m_PrefabInternal: {fileID: 1228841302}
+--- !u!95 &1802640636
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1802640633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87664544a647cae49b4fba02906e3ea1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1837369347
 Prefab:
   m_ObjectHideFlags: 0
