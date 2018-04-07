@@ -4949,7 +4949,7 @@ SpriteRenderer:
   m_Size: {x: 0.04, y: 0.06}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1001 &1261253146
 Prefab:
@@ -5245,6 +5245,35 @@ Transform:
   m_PrefabParentObject: {fileID: 4893420307518560, guid: fff70b27b1ca4524c8b930f7308ee720,
     type: 2}
   m_PrefabInternal: {fileID: 1310734538}
+--- !u!1 &1349452982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 813081928}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1349452983}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1349452983
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 813081928}
+  m_GameObject: {fileID: 1349452982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1376078375}
+  m_Father: {fileID: 1228841303}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350179030
 GameObject:
   m_ObjectHideFlags: 0
@@ -5559,11 +5588,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.62, y: 0.44}
   m_EdgeRadius: 0
---- !u!4 &1376078375 stripped
+--- !u!4 &1376078375
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4482978200979396, guid: ba09b3e08745c9344b86acb7a443def6,
     type: 2}
   m_PrefabInternal: {fileID: 813081928}
+  m_GameObject: {fileID: 1769495412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1793092545}
+  - {fileID: 1251217045}
+  m_Father: {fileID: 1349452983}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1414566049
 Prefab:
   m_ObjectHideFlags: 0
@@ -5914,7 +5954,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1461883946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c17649cae2abe48b7c68e5b6dce32b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2242923be2a6d5342a46ca3f6aa29be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1464433861 stripped
@@ -6912,6 +6952,21 @@ Transform:
   m_Father: {fileID: 1099041909}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1769495412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 813081928}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1376078375}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &1778932723
 Prefab:
   m_ObjectHideFlags: 0
@@ -7173,7 +7228,7 @@ SpriteRenderer:
   m_Size: {x: 0.04, y: 0.06}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &1798232444
 GameObject:
