@@ -48,6 +48,7 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
         TargetState.Target = nextRoom.transform.position - new Vector3(0, 0, 1);
         TargetState.IsInited = true;
         var room = nextRoom.GetComponent<room>();
-        room.EnterRoom();
+        var character = camera.GetComponentInChildren<character>();
+        room.EnterRoom(character);
     }
 }

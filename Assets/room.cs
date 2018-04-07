@@ -15,14 +15,21 @@ public class room : MonoBehaviour
 
     public bool HasEnemy()
     {
-        return GetComponentInChildren<rat>() != null;
+         return GetEnemy() != null;
+    }
+
+    public IEnemy GetEnemy()
+    {
+        return GetComponentInChildren<rat>();
     }
      
-    public void EnterRoom ()
+    public void EnterRoom (character character)
     {
         if (HasEnemy())
         {
             print("Oppps! There is enemy in this room.");
+            var enemy = GetEnemy();
+            character.Fight(enemy);
         }
     }
 }

@@ -4732,7 +4732,8 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: a93bf2480de05b248ac4132434264d0d,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114875986593662808, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: fa0b85d211f857f40bb560e222b34ced, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1228841303 stripped
@@ -6890,6 +6891,19 @@ GameObject:
   m_PrefabParentObject: {fileID: 1767821247236198, guid: fa0b85d211f857f40bb560e222b34ced,
     type: 2}
   m_PrefabInternal: {fileID: 1228841302}
+--- !u!114 &1802640634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1802640633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd842a5955b99f4bb753bcf6087941e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  Damage: 0
 --- !u!95 &1802640636
 Animator:
   serializedVersion: 3
