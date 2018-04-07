@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\character.cs" />
      <Compile Include="Assets\doorMove.cs" />
+     <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\gnomeBehavior.cs" />
      <Compile Include="Assets\room.cs" />
  <Reference Include="UnityEngine.UI">
