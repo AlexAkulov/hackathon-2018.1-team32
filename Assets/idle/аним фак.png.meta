@@ -118,12 +118,12 @@ TextureImporter:
       name: "\u0430\u043D\u0438\u043C \u0444\u0430\u043A_0"
       rect:
         serializedVersion: 2
-        x: 40
-        y: 36
+        x: 43
+        y: 16
         width: 140
-        height: 146
+        height: 140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,12 +132,12 @@ TextureImporter:
       name: "\u0430\u043D\u0438\u043C \u0444\u0430\u043A_1"
       rect:
         serializedVersion: 2
-        x: 196
-        y: 36
+        x: 195
+        y: 16
         width: 140
-        height: 146
+        height: 140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,12 +146,12 @@ TextureImporter:
       name: "\u0430\u043D\u0438\u043C \u0444\u0430\u043A_2"
       rect:
         serializedVersion: 2
-        x: 352
-        y: 36
+        x: 353
+        y: 16
         width: 140
         height: 140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: "\u0430\u043D\u0438\u043C \u0444\u0430\u043A_3"
       rect:
         serializedVersion: 2
-        x: 500
-        y: 36
+        x: 501
+        y: 16
         width: 140
-        height: 150
+        height: 140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
