@@ -49,7 +49,6 @@ public class rat : MonoBehaviour, IEnemy, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         var character = FindObjectOfType<character>();
-        Hit(character);
-        
+        Hit(character);        
     }
 }
