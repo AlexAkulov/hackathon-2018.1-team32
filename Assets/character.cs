@@ -9,7 +9,7 @@ public class character : MonoBehaviour
 	void Start ()
 	{
 	    Damage = Consts.BaseHerowDamage;
-        healthStatus = new hp();
+        healthStatus = GetComponentInChildren<hp>();
 	    healthStatus.Init(Consts.BaseHerowHelth);
 	}
 	
@@ -21,6 +21,11 @@ public class character : MonoBehaviour
     public void Hit(int damage)
     {
         healthStatus.Health -= damage;
+        if (damage > 0)
+        {
+            GetComponentInChildren<hp>().GetComponent<Animator>().Play(0);
+        }
+
         if (healthStatus.Health <= 0)
         {
             SceneManager.LoadScene(0);
