@@ -19,9 +19,10 @@ public interface IEnemy
 
 public class rat : MonoBehaviour, IEnemy, IPointerClickHandler
 {
+ 
     void Start ()
     {
-        Health = Consts.RatHealth;
+        Health = Random.Range(5, 20);
     }
 	
 	// Update is called once per frame
@@ -43,7 +44,7 @@ public class rat : MonoBehaviour, IEnemy, IPointerClickHandler
     }
 
     public int Health { get; private set; }
-    public int Damage {get { return Consts.RatDamage; }}
+    public int Damage {get { return Random.Range(1, 20); }}
 
 
     public void OnPointerClick(PointerEventData eventData)

@@ -28,6 +28,10 @@ public class character : MonoBehaviour
 
         if (healthStatus.Health <= 0)
         {
+	        var g = FindObjectOfType<Game>();
+	        g.DialogOkShow("Вы мертвы", "Ну ок");
+	        
+	        
             SceneManager.LoadScene(0);
             TargetState.IsInited = false;
         }
