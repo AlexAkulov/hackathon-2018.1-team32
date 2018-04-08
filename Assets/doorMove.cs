@@ -1,5 +1,4 @@
-﻿using System.Runtime.Serialization.Formatters;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public static class TargetState
