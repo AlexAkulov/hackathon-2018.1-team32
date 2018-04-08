@@ -2654,7 +2654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11000001, y: 0.20670868}
   m_AnchorMax: {x: 0.8812501, y: 0.87436426}
-  m_AnchoredPosition: {x: 1058.0002, y: 722.00006}
+  m_AnchoredPosition: {x: 1058.0004, y: 722}
   m_SizeDelta: {x: 183, y: 169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &489903918
@@ -5256,21 +5256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994118467fbba94488b3a7471c433dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Anim: {fileID: 0}
---- !u!111 &1122649077
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1122649075}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 326e4bc137dd55a4eb2649e8ebcc2f7b, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 1
 --- !u!95 &1122649078
 Animator:
   serializedVersion: 3
@@ -8475,7 +8460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38875002, y: 0.28}
   m_AnchorMax: {x: 0.7275, y: 0.60400003}
-  m_AnchoredPosition: {x: -236.50005, y: -132.44998}
+  m_AnchoredPosition: {x: -236.50003, y: -132.44998}
   m_SizeDelta: {x: -142.5, y: -123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803747720
