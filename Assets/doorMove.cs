@@ -1,5 +1,4 @@
-﻿using System.Runtime.Serialization.Formatters;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public static class TargetState
@@ -39,18 +38,6 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
         var currentRoom = GetComponentInParent<room>();
         var locked = currentRoom.HasEnemy();
         
-        if (locked)
-        {
-//            FindObjectOfType<Game>().FightLabel.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, 0);
-            FindObjectOfType<Game>().FightLabel.transform.localScale = new Vector3(1, 1, 1);
-
-        }
-        else
-        {
-//            FindObjectOfType<Game>().FightLabel.transform.position = new Vector3(-300, -500, 0);
-            FindObjectOfType<Game>().FightLabel.transform.localScale = new Vector3(0, 0, 0);
-        }
-
         return locked;
     }
 

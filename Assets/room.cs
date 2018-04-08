@@ -27,8 +27,6 @@ public class room : MonoBehaviour
         if (HasEnemy())
         {
             print("Oppps! There is enemy in this room.");
-            var enemy = GetEnemy();
-            character.Fight(enemy);
         }
     }
 }
