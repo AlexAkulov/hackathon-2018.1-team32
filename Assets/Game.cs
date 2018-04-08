@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -14,6 +15,7 @@ public class Game : MonoBehaviour
 	public GameObject Chest;
 	public GameObject Torch;
 	public GameObject Rat;
+	public GameObject Ghost;
 	public GameObject DialogOk;
 	public GameObject Camera;
 	public GameObject FightLabel;
@@ -34,12 +36,19 @@ public class Game : MonoBehaviour
 
 	private room[] rooms;
 	
+	private struct DialogStruct
+	{
+		private string msg;
+		private string btnMsg;
+	}
+	
 	private struct Room
 	{
 		public GameObject web;
 		public GameObject chest;
 		public GameObject torch;
 		public GameObject Enemy;
+		public DialogStruct GameEvent;
 	}
 	
 	private Room[,] Level = new Room[NumberOfRooms,NumberOfRooms];
@@ -85,6 +94,8 @@ public class Game : MonoBehaviour
 				continue;
 			var c = Instantiate(Chest);
 			c.transform.position = new Vector3(x*Width + Left, y*Height + Top - 12, 0);
+
+		
 			Level[x,y].chest = c;
 		}
 	}
@@ -118,9 +129,24 @@ public class Game : MonoBehaviour
 
 		    busy.Add(roomIndex);
 
-            var t = Instantiate(Rat, new Vector3(16, -10, 0), Quaternion.identity);
-            t.transform.parent = rooms[roomIndex].transform;
-            t.transform.Translate(rooms[roomIndex].transform.position);
+		    
+		    if (Random.Range(0, 4) > 2) // с шансом 1/3 выпадают призраки
+		    {
+			   var t = Instantiate(Ghost, new Vector3(16, -5, 0), Quaternion.identity);
+			    t.transform.parent = rooms[roomIndex].transform;
+			    t.transform.Translate(rooms[roomIndex].transform.position);
+		    }
+		    else
+		    {
+			    var t = Instantiate(Rat, new Vector3(16, -10, 0), Quaternion.identity);
+			    t.transform.parent = rooms[roomIndex].transform;
+			    t.transform.Translate(rooms[roomIndex].transform.position);
+		    }
+  
+		    if (Random.Range(0, 100) < 10) // С шансом 1/10 враги предложат присоединиться 
+		    {
+				
+		    }
 		}
 	}
 	

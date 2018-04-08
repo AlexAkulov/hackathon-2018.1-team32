@@ -39,7 +39,6 @@ public class Chest : MonoBehaviour, IPointerClickHandler {
 
 	void GetLoot()
 	{
-
 		var Loot = new string[] {
 			string.Format("золото +{0}", UnityEngine.Random.Range(1, 100)),
 			string.Format("меч +{0}", UnityEngine.Random.Range(1, 6)),

@@ -60,7 +60,7 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
         if (IsLocked())
         {
             var g = FindObjectOfType<Game>();
-            g.DialogOkShow("Вы не можете покинуть эту комнату во время боя", "Ок");
+            g.DialogOkShow("Вы не можете покинуть комнату во время боя", "Ок");
             return;
         }
 
