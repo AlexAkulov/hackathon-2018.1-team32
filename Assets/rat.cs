@@ -44,7 +44,7 @@ public class rat : MonoBehaviour, IEnemy, IPointerClickHandler
     }
 
     public int Health { get; private set; }
-    public int Damage {get { return Random.Range(1, 20); }}
+    public int Damage {get { return Random.Range(1, 50); }}
 
 
     public void OnPointerClick(PointerEventData eventData)

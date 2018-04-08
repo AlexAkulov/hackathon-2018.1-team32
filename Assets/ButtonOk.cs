@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ButtonOk : MonoBehaviour, IPointerClickHandler {
 
@@ -16,5 +17,9 @@ public class ButtonOk : MonoBehaviour, IPointerClickHandler {
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		FindObjectOfType<Game>().DialogOkHide();
+	    if (HerowHp.Health <= 0)
+	    {
+	        SceneManager.LoadScene(0);
+	    }
 	}
 }

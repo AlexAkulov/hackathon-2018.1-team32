@@ -32,7 +32,7 @@ public class character : MonoBehaviour
 	        g.DialogOkShow("Вы мертвы", "Ну ок");
 	        
 	        
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
             TargetState.IsInited = false;
         }
     }
