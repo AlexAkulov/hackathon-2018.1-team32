@@ -15,7 +15,7 @@ public static class TargetState
 
 public class doorMove : MonoBehaviour, IPointerClickHandler
 {
-    public new GameObject camera;
+    public GameObject camera;
     public GameObject nextRoom;
 
 
@@ -37,7 +37,21 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
     public bool IsLocked()
     {
         var currentRoom = GetComponentInParent<room>();
-        return currentRoom.HasEnemy();
+        var locked = currentRoom.HasEnemy();
+        
+        if (locked)
+        {
+//            FindObjectOfType<Game>().FightLabel.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, 0);
+            FindObjectOfType<Game>().FightLabel.transform.localScale = new Vector3(1, 1, 1);
+
+        }
+        else
+        {
+//            FindObjectOfType<Game>().FightLabel.transform.position = new Vector3(-300, -500, 0);
+            FindObjectOfType<Game>().FightLabel.transform.localScale = new Vector3(0, 0, 0);
+        }
+
+        return locked;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -45,6 +59,8 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
         
         if (IsLocked())
         {
+            var g = FindObjectOfType<Game>();
+            g.DialogOkShow("Вы не можете покинуть эту комнату во время боя", "Ок");
             return;
         }
 
@@ -62,7 +78,7 @@ public class doorMove : MonoBehaviour, IPointerClickHandler
 
             if (!g.D3OpenMessage)
             {
-                g.DialogOkShow("Дверь удаётся открыть ключём", "Ок");
+                g.DialogOkShow("Ключ подходит к двери", "Ок");
                 g.D3OpenMessage = true;
                 return;
             }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -25,6 +26,7 @@ public class Chest : MonoBehaviour, IPointerClickHandler {
 			{
 				Destroy(gameObject);
 				t = 0.0f;
+				GetLoot();
 			}
 		}		
 	}
@@ -32,6 +34,23 @@ public class Chest : MonoBehaviour, IPointerClickHandler {
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		destroyed = true;
-		
 	}
+
+
+	void GetLoot()
+	{
+
+		var Loot = new string[] {
+			string.Format("золото +{0}", UnityEngine.Random.Range(1, 100)),
+			string.Format("меч +{0}", UnityEngine.Random.Range(1, 6)),
+			string.Format("доспехи +{0}", UnityEngine.Random.Range(1, 6)),
+			string.Format("щит +{0}", UnityEngine.Random.Range(1, 6)),
+			string.Format("золото +{0}", UnityEngine.Random.Range(10, 100)*10),
+			"эликсир здоровья",
+			"эликсир маны",
+			"кирку (зачем она тут?)", 
+			"верблюжее дерьмо", 
+			"свиток \"молния\"" };
+		FindObjectOfType<Game>().DialogOkShow(string.Format("В сундуке вы находите: {0}", Loot[UnityEngine.Random.Range(0, Loot.Length)]), "забрать");
+	} 
 }

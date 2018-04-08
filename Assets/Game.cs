@@ -16,11 +16,13 @@ public class Game : MonoBehaviour
 	public GameObject Rat;
 	public GameObject DialogOk;
 	public GameObject Camera;
+	public GameObject FightLabel;
+	
 	
 	private const int NumberOfRooms = 5;
 	private const int NumberOfWeb = 10;
 	private const int NumberOfChests = 5;
-	private const int NumberOfTorch = 5;
+	private const int NumberOfTorch = 10;
 	private const int NumberOfEnemies = 5;
 	
 	
@@ -29,6 +31,8 @@ public class Game : MonoBehaviour
 
 	private const int Left = (-2 * Width);
 	private const int Top = (-4 * Height);
+
+	private room[] rooms;
 	
 	private struct Room
 	{
@@ -46,9 +50,9 @@ public class Game : MonoBehaviour
 	void Start ()
     {
         Random.InitState(DateTime.Now.Millisecond);
-        var rooms = FindObjectsOfType<room>();
+        rooms = FindObjectsOfType<room>();
         print("Start Game");
-		BuildLevel(rooms);
+		BuildLevel();
 	}
 	
 	// Update is called once per frame
@@ -62,11 +66,12 @@ public class Game : MonoBehaviour
 		{
 			var x = Random.Range(0, NumberOfRooms);
 			var y = Random.Range(0, NumberOfRooms);
-			
+			if (Level[x, y].web != null)
+				continue;
+
 			var w = Instantiate(Web);
-		
-			w.transform.position = new Vector3(x*Width + Left- 22, y*Height + Top + 8, 0);
-			Level[x,y].web = w;
+			w.transform.position = new Vector3(x * Width + Left - 22, y * Height + Top + 8, 0);
+			Level[x, y].web = w;
 		}
 	}
 
@@ -76,10 +81,10 @@ public class Game : MonoBehaviour
 		{
             var x = Random.Range(0, NumberOfRooms);
 			var y = Random.Range(0, NumberOfRooms);
-			
+			if (Level[x, y].chest != null || (x==1 && y==0))
+				continue;
 			var c = Instantiate(Chest);
-		
-			c.transform.position = new Vector3(x*Width + Left, y*Height + Top- 12, 0);
+			c.transform.position = new Vector3(x*Width + Left, y*Height + Top - 12, 0);
 			Level[x,y].chest = c;
 		}
 	}
@@ -90,17 +95,18 @@ public class Game : MonoBehaviour
 		{
 			var x = Random.Range(0, NumberOfRooms);
 			var y = Random.Range(0, NumberOfRooms);
-			
+			if (Level[x, y].torch != null)
+				continue;
 			var t = Instantiate(Torch);
-		
 			t.transform.position = new Vector3(x*Width + Left, y*Height + Top, 0);
 			Level[x,y].torch = t;
 		}
 	}
 	
-	private void generateEnemies(room[] rooms)
+	private void generateEnemies()
 	{
 	    var busy = new HashSet<int>();
+		busy.Add(0); // Это стартовая позиция тут не нужен враг
 	    for (var i = 0; i < NumberOfEnemies; i++)
 	    {
 	        int roomIndex;
@@ -118,12 +124,12 @@ public class Game : MonoBehaviour
 		}
 	}
 	
-	private void BuildLevel(room[] rooms)
+	private void BuildLevel()
 	{
 		generateWeb();
 		generateChest();
 		generateTorch();
-		generateEnemies(rooms);
+		generateEnemies();
 	}
 
 	public void DialogOkShow(string txt, string txtBtn)

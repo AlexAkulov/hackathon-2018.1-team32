@@ -26,7 +26,7 @@ public class GetKey : MonoBehaviour, IPointerClickHandler {
 			{
 				Destroy(gameObject);
 				t = 0.0f;
-				FindObjectOfType<Game>().DialogOkShow("Вы находите странный ключ", "Взять");
+				FindObjectOfType<Game>().DialogOkShow("Вы находите ключ", "Взять");
 			}
 		}		
 	}
